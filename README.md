@@ -3,8 +3,9 @@
 ## 1. Visão Geral
 
 **Tecnologia Utilizada:**
-- Python  
-- FastAPI  
+
+- Python
+- FastAPI
 - Uvicorn
 
 **Descrição:**  
@@ -34,7 +35,6 @@ Além disso, a API pode ser integrada a sistemas externos, painéis de monitoram
 
 - **Integração com outros sistemas:** A estrutura da API é modular e preparada para ser consumida por aplicações web, móveis ou painéis administrativos em tempo real.
 
-
 ### 2.2 Arquitetura do Código
 
 ```
@@ -50,11 +50,19 @@ meteo-api/
 │   │   └── __init__.py
 ```
 
-
 ## 3. Etapas de Entrega (Cronograma Detalhado)
 
-- **Etapa 1:**  
-- **Etapa 2:**  
-- **Etapa 3:**  
-- **Etapa 4:**  
-- **Etapa 5:** 
+- **Etapa 1: Levantamento de Requisitos e Definição do Escopo**  
+  Identificar as funcionalidades principais da API, os dados que serão consumidos (como os da OpenWeatherMap), e estruturar a proposta geral do projeto.
+
+- **Etapa 2: Planejamento da Arquitetura e Estruturação do Projeto**  
+  Definir a estrutura de diretórios, configurar o ambiente com FastAPI e Uvicorn, organizar os arquivos (`main.py`, `api.py`, `schemas/`, `models/`) e configurar variáveis de ambiente.
+
+- **Etapa 3: Integração com API de Terceiros e Desenvolvimento das Funcionalidades**  
+  Conectar-se à API externa (OpenWeatherMap), implementar rotas para obter clima atual, previsão e históricos, e validar dados com Pydantic.
+
+- **Etapa 4: Implementação de Detecção de Riscos e Alertas**  
+  Criar lógica de análise para identificar riscos meteorológicos (ex: chuvas fortes, calor extremo) com base nos dados recebidos.
+
+- **Etapa 5: Testes, Documentação e Implantação**  
+  Testar a API (manual e automatizado), documentar o código e rotas (ex: com Swagger), preparar README, e implantar o projeto localmente ou em nuvem (Ex: Render, Railway, etc).
