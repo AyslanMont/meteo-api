@@ -8,10 +8,13 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "fastapi (>=0.115.12,<0.116.0)",
+    "uvicorn (>=0.34.2,<0.35.0)",
+    "pydantic (>=2.11.4,<3.0.0)"
 ]
 
 [tool.poetry]
-packages = [{include = "meteo_api", from = "src"}]
+packages = [{include = "meteo-api", from = "src"}]
 
 
 [build-system]
