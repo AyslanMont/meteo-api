@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi import HTTPException
-from .schemas.clima import Clima
+from schemas.clima import Clima
 from os import getenv
 import requests
 from dotenv import load_dotenv
@@ -9,6 +9,7 @@ app = FastAPI()
 
 load_dotenv()
 API_KEY = str(getenv("OPENWEATHER_API_KEY"))
+print("API_KEY:", API_KEY)
 
 
 @app.get("/clima", response_model=Clima)
