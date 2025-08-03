@@ -1,10 +1,10 @@
 from fastapi import FastAPI, HTTPException
-from schemas.clima import Clima
-from schemas.previsao import Previsao
-from schemas.historico import RegistroClima
+from .schemas.clima import Clima
+from .schemas.previsao import Previsao
+from .schemas.historico import RegistroClima
 from os import getenv
 from dotenv import load_dotenv
-from services import salvar_em_historico, obter_historico, obter_clima_atual, obter_previsao
+from .services import salvar_em_historico, obter_historico, obter_clima_atual, obter_previsao
 
 app = FastAPI()
 

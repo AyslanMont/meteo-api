@@ -2,8 +2,8 @@ import requests
 from os import getenv
 from dotenv import load_dotenv
 from datetime import datetime
-from schemas.previsao import Previsao, PrevisaoItem
-from schemas.historico import RegistroClima
+from .schemas.previsao import Previsao, PrevisaoItem
+from .schemas.historico import RegistroClima
 
 load_dotenv()
 API_KEY = getenv("OPENWEATHER_API_KEY")
