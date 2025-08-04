@@ -4,7 +4,7 @@ from .schemas.previsao import Previsao
 from .schemas.historico import RegistroClima
 from os import getenv
 from dotenv import load_dotenv
-from .services import salvar_em_historico, obter_historico, obter_clima_atual, obter_previsao
+from .services import salvar_em_historico, obter_historico, obter_clima_atual, obter_previsao, analisar_risco
 
 app = FastAPI()
 
@@ -51,3 +51,13 @@ def get_previsao(cidade: str):
 @app.get("/historico", response_model=list[RegistroClima])
 def get_historico():
     return obter_historico()
+
+@app.get("/alerta")
+def get_alerta(cidade: str):
+    try:
+        dados = obter_clima_atual(cidade)
+        alerta = analisar_risco(dados)
+        return {"cidade": cidade, "alerta": alerta}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
